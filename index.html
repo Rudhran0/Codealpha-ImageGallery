@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Phone Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+    <!-- Top Action Bar -->
+    <header class="app-bar">
+        <div class="top-row">
+            <h1>Gallery</h1>
+            <div class="actions">
+                <button id="theme-toggle" title="Toggle Theme">🌓</button>
+                <button id="view-toggle" title="Switch Layout">🔲</button>
+                <label for="image-upload" class="upload-btn">
+                    <span>+ Add</span>
+                    <input type="file" id="image-upload" accept="image/*" multiple style="display: none;">
+                </label>
+            </div>
+        </div>
+        
+        <!-- Search Controls -->
+        <div class="controls-row">
+            <input type="text" id="search-bar" placeholder="Search photos by name...">
+        </div>
+    </header>
+
+    <!-- Main Gallery Container -->
+    <main class="gallery-container grid-view" id="gallery-container">
+        <div id="empty-state" class="empty-state">
+            <p>No photos yet. Click '+ Add' to upload from your device.</p>
+        </div>
+    </main>
+
+    <!-- Upgraded Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <!-- Floral Background Decoration -->
+        <div class="floral-bg"></div>
+
+        <span class="close-btn" id="close-lightbox">&times;</span>
+        <button class="nav-btn prev-btn" id="prev-btn">&#10094;</button>
+        
+        <div class="lightbox-wrapper">
+            <div class="lightbox-top-actions">
+                <button id="slideshow-btn" class="tool-btn">▶ Slideshow</button>
+                <button id="delete-btn" class="tool-btn delete-action">🗑️ Delete</button>
+            </div>
+
+            <div class="image-stage">
+                <img id="lightbox-img" src="" alt="Preview">
+            </div>
+
+            <!-- Editing Tools Bar -->
+            <div class="edit-tools-bar">
+                <button class="edit-btn" data-filter="grayscale">B&W</button>
+                <button class="edit-btn" data-filter="sepia">Sepia</button>
+                <button class="edit-btn" data-filter="invert">Invert</button>
+                <button class="edit-btn" data-filter="blur">Blur</button>
+                <button class="edit-btn active" data-filter="none">Reset</button>
+            </div>
+
+            <div class="lightbox-footer">
+                <span id="image-title">Image Name</span>
+            </div>
+        </div>
+        
+        <button class="nav-btn next-btn" id="next-btn">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
